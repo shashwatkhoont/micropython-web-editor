@@ -37,7 +37,8 @@ print("Activating network")
 import network
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect('YOUR_SSID', 'YOUR_PASS')
+if wlan.isconnected() == False:
+  wlan.connect('YOUR_SSID', 'YOUR_PASS')
 
 print("Starting webrepl")
 import webrepl
